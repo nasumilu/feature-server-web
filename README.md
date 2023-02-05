@@ -4,5 +4,5 @@ A simple single page application (SPA) using Angular for configuring the `nasumi
 
 
 ## Resources
-[nasumilu/feature-server](https://github.com/nasumilu/feature-server)
-[Angular](https://angular.io/)
+- [nasumilu/feature-server](https://github.com/nasumilu/feature-server)
+- [Angular](https://angular.io/)
