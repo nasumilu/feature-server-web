@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-3 d-flex flex-column justify-content-between">
+    <ul class="list-group list-group-flush h-100">
+      <li *ngFor="let datasource of (list$() | async);first as first"
+          type="button"
+          [class]="'list-group-item d-flex justify-content-between align-items-start' + (selected === datasource ? ' active' : '')"
+          [attr.aria-current]="selected === datasource">
+        <a (click)="selected = datasource">{{ datasource.name }}</a>
+      </li>
+    </ul>
+    <button class="btn btn-primary w-100" title="Add new datasource" (click)="addDatasource()">
+      <i class="bi bi-database-fill-add"></i> Add Datasource
+    </button>
+  </div>
+  <div class="col-9">
+    <datasource></datasource>
+  </div>
+
+</div>

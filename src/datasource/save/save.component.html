@@ -1,0 +1,17 @@
+<button *ngIf="datasource" type="button" class="btn btn-primary"
+        [disabled]="datasource.options.invalid"
+        (click)="save()">
+  <ng-container *ngIf="!saving; else savingText">
+    <ng-container *ngIf="datasource.options.controls['id'].value; else saveText">
+      Update
+    </ng-container>
+    <ng-template #saveText>
+      Save
+    </ng-template>
+  </ng-container>
+
+  <ng-template #savingText>
+    <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+    Saving...
+  </ng-template>
+</button>

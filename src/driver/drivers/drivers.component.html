@@ -1,0 +1,28 @@
+<ng-container *ngIf="drivers$ | async as drivers; else loading">
+  <div class="input-group">
+    <div class="form-floating">
+      <select
+        [class]="required && control.touched && control.invalid ? 'form-select is-invalid' : 'form-select'"
+        [formControl]="control">
+        <option value="">Select...</option>
+        <option *ngFor="let driver of drivers" [value]="driver.driver">{{ driver.label }}</option>
+      </select>
+      <ng-content select="label"></ng-content>
+    </div>
+    <span class="input-group-text"><i class="bi bi-database-fill"></i></span>
+  </div>
+</ng-container>
+<ng-template #loading>
+  <div class="input-group">
+    <div class="form-floating">
+      <select class="form-select" [formControl]="control"> </select>
+      <label>Loading...</label>
+    </div>
+    <span class="input-group-text">
+      <div class="spinner-border spinner-border-sm" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </span>
+  </div>
+</ng-template>
+

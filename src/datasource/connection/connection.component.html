@@ -1,0 +1,13 @@
+<button *ngIf="datasource" type="button" class="btn btn-success"
+        [disabled]="datasource.options.invalid"
+        (click)="connect()">
+  <ng-container *ngIf="!loading;else loadingTxt">
+    Test Connection
+  </ng-container>
+
+  <ng-template #loadingTxt>
+      <span class="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
+      Testing...
+  </ng-template>
+</button>
+

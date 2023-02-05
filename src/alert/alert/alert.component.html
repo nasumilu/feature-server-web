@@ -1,0 +1,8 @@
+<div *ngFor="let alert of (alerts$ | async) ?? []"
+     [class]="alert.dismissible ? 'alert alert-' + alert.style + ' alert-dismissible fade show' : 'alert alert-' + alert.style" role="alert">
+  {{ alert.message }}
+  <ng-container *ngIf="alert.dismissible;">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </ng-container>
+</div>
+
